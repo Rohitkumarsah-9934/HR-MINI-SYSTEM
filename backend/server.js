@@ -13,7 +13,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: "*", credentials: true }));
+app.use(cors({
+   credentials: true,
+    origin :  process.env.FRONTEND_URL
+}));
 app.use(express.json());
 
 // Routes
